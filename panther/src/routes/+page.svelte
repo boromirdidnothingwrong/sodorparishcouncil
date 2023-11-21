@@ -11,9 +11,6 @@
       const data = await response.json();
       console.log(data);
     });
-  
-    export let name;
-    posts = data;
 </script>
 
 <div class="container mx-auto p-8 space-y-8">
