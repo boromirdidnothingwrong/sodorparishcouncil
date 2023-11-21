@@ -16,8 +16,7 @@ jobs:
     steps:
     - name: checkout
     - uses: actions/checkout@v3
-    
-    - name: Build the Docker image
+    - name: Contensis Push Block
     - uses: contensis/block-push@v1
       with:
         block-id: name-of-block
