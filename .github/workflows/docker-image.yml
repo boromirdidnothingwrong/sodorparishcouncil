@@ -18,7 +18,7 @@ jobs:
     - uses: contensis/block-push@v1
       with:
           block-id: name-of-block
-          alias: example-dev
-          project-id: website
+          alias: staffscc
+          project-id: testingJosh
           client-id: ${{ secrets.CONTENSIS_CLIENT_ID }}
           shared-secret: ${{ secrets.CONTENSIS_SHARED_SECRET }}
