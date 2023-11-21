@@ -14,9 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout
     - uses: actions/checkout@v3
-    - name: Contensis Push Block
     - uses: contensis/block-push@v1
       with:
           block-id: name-of-block
