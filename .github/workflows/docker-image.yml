@@ -55,7 +55,7 @@ jobs:
       - name: Contensis block push action
         uses: contensis/block-push@v1
         with:
-          alias: staffscc
+          alias: cms-staffscc
           block-id: name-of-block
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_TOKEN }}
