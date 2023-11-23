@@ -1,22 +1,6 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-<script lang="ts">
-	
-
-   
-
-</script>
 <div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-10 text-center flex flex-col items-center">
-		<div class="container mx-auto p-8 space-y-8">
-			<section>
-				Can I put text here?<br	/>
-				<a href="/toplevel">Top Level</a>	
-				<a href="/maps">Maps</a>
-				<a href="/about">About</a>
-
-			</section>
-		</div>
-	</div>
+	Great big bloody map here
 </div>
 
 <style lang="postcss">

@@ -2,15 +2,19 @@
     <title>Main Page</title>
 </svelte:head>
 <script>
-   import { item } from "./+page.js"
-</script>
+   /** @type {import('./$types').PageData} */
+	export let data;
+  </script>
 
 <div>
-    <h1>{item}</h1>
+    <h1>Quotes</h1>
 
-    {#each item.quote as quote}
+    {#each data.item.quotes as quote}
+
   <div>
-    <p>{quote}</p>
+    <p>{ quote.quote }</p>
+    <p>{ quote.author}</p>
+    <br />
   </div>
 {/each}
 </div>

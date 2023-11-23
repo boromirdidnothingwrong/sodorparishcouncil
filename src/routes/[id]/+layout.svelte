@@ -2,17 +2,18 @@
 	import '../app.postcss';
 	import { AppShell, AppBar, AppRail, AppRailTile, AppRailAnchor } from '@skeletonlabs/skeleton';
 
-	import { page } from '$app/stores';
-
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
-	
+	import { page } from '$app/stores';
+
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	// For the Tabs
 	let tabSet: number = 0;
+
+	 
 </script>
 
 <!-- App Shell -->
@@ -20,12 +21,11 @@
 	<svelte:fragment slot="header">
 	<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
 		<svelte:fragment slot="lead">Some Icon</svelte:fragment>
-		Page Title Placeholder
-		<!-- Josh needs to figure out how the hell to dynamically load the page title. Nightmare for some reason!-->
+		Main Page
 		<svelte:fragment slot="trail">(actions)</svelte:fragment>
 	</AppBar>
 	<TabGroup>
-		<TabAnchor href="/" selected={$page.url.pathname === '/'}>Home</TabAnchor>
+		<TabAnchor href="[id]/" selected={$page.url.pathname === '[id]/'}>Home</TabAnchor>
 		<TabAnchor href="[id]/about" selected={$page.url.pathname === '[id]/about'}>About</TabAnchor>
 	</TabGroup>
 	</svelte:fragment>
