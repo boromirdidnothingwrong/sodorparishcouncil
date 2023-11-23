@@ -29,12 +29,14 @@
 		<!-- Josh needs to figure out how the hell to dynamically load the page title. Nightmare for some reason!-->
 		<svelte:fragment slot="trail">(actions)</svelte:fragment>
 	</AppBar>
+	</svelte:fragment>
 	<TabGroup>
-		<TabAnchor href="/" selected="{$page.url.pathname===''}>Home</TabAnchor>
+		<TabAnchor href="/" selected="{$page.url.pathname===''}"> Home </TabAnchor>
 	</TabGroup>
-	</svelte:fragment>
-	<svelte:fragment slot="sidebarLeft">
-	</svelte:fragment>
+	
+	
+
+	<svelte:fragment slot="sidebarLeft"></svelte:fragment>
 	<!-- (sidebarRight) -->
 	<!-- (pageHeader) -->
 	<!-- Router Slot -->
