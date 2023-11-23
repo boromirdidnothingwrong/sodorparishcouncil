@@ -1,12 +1,12 @@
 <script lang="ts">
-	/** @type {import('./$types').PageData} */
+	/** @type {import('../$types').PageData} */
 	 export let data;
 </script>
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<div class="container mx-auto p-8 space-y-8">
 			<section>
-				{data.data.quotes}
+				{data.quotes}
 			</section>
 		</div>
 	</div>
