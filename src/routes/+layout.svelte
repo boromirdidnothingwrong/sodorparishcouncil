@@ -11,6 +11,10 @@
 	
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
+
+   /** @type {import('./$types').PageData} */
+	export let data;
+  
 	// For the Tabs
 	let tabSet: number = 0;
 </script>

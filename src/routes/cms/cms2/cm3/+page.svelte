@@ -7,6 +7,13 @@
    </script>
 
 <div class="container mx-auto p-8 space-y-8">
-<p>{ data.item.quotes }</p>
+	{#each data.item.quotes as quote}
+
+  <div>
+    <p>{ quote.quote }</p>
+    <p>{ quote.author}</p>
+    <br />
+  </div>
+{/each}
 </div>
 

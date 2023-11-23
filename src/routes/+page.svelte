@@ -1,7 +1,10 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 <script lang="ts">
 	
-
+	
+   /** @type {import('./$types').LayoutData} */
+	export let data;
+  
    
 
 </script>
@@ -10,6 +13,14 @@
 		<div class="container mx-auto p-8 space-y-8">
 			<section>
 				Can I put text here?<br	/>
+				{#each data.item.quotes as quote}
+
+  <div>
+    <p>{ quote.quote }</p>
+    <p>{ quote.author}</p>
+    <br />
+  </div>
+{/each}
 				<a href="/toplevel">Top Level</a>	
 				<a href="/maps">Maps</a>
 				<a href="/about">About</a>
