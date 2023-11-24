@@ -19,9 +19,8 @@ const config = {
 		extend: {},
 	},
 	plugins: [
-		skeleton({
-      themes: { preset: [ "skeleton" ]}
-    })
+		// 4. Append the Skeleton plugin (after other plugins)
+		skeleton
 	]
 } satisfies Config;
 

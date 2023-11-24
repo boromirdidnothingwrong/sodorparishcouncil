@@ -1,10 +1,12 @@
-<script>
-    /** @type {import('./$types').PageData} */
-    export let PageData;;
+<script type="ts">
+	/** @type {import('./$types').PageData} */
+	export let data;
+    
 </script>
-<div>
-{PageData}
-</div>
-<style>
-  
-</style>
+
+<h1>{data.post.title}</h1>
+
+
+<body>
+
+</body>
