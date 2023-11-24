@@ -1,17 +1,7 @@
 <script>
   import "../app.pcss";
   import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-    
-  /*Initialise the Contensis Delivery API*/
-  const { Client } = require("contensis-delivery-api");
-  const ContensisClient = Client.create({
-    rootUrl:"staffscc",
-    accessToken: "access_token",
-    projectId: "testingJosh",
-  })
-
 </script>
-
 <AppShell>
 	<svelte:fragment slot="pageHeader">
     <AppBar>Hold for Title</AppBar>
