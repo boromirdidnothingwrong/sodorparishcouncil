@@ -65,6 +65,6 @@ jobs:
           block-id: sodor-pc-block
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_TOKEN }}
-          image-uri: sodorpc
+          image-uri: ${{ env.IMAGE_NAME}}
           project-id: sodorparishcouncil
           shared-secret: ${{ secrets.Z_SHARED_SECRET }}
