@@ -60,5 +60,5 @@ jobs:
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_TOKEN }}
           image-uri: ${{ env.IMAGE_NAME }}
-          project-id: testingJosh
+          project-id: sodorparishcouncil
           shared-secret: ${{ secrets.Z_SHARED_SECRET }}
