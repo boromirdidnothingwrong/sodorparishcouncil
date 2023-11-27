@@ -62,7 +62,7 @@ jobs:
         uses: contensis/block-push@v1
         with:
           alias: staffscc
-          block-id: santa-is-coming-to-town
+          block-id: sodor-pc-block
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_TOKEN }}
           image-uri: sodorpc
