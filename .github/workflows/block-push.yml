@@ -8,7 +8,7 @@ on:
   
 
 env:
-    IMAGE_NAME: sodorpc
+    IMAGE_NAME: ${{ github.respository }}
     IMAGE_TAGS: v1 ${{ github.sha }}
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
     REGISTRY_USER: ${{ github.actor }}
