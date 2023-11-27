@@ -1,14 +1,14 @@
-name: Push the Block
+name: Docker Image CI
 
 on:
   pull_request:
     branches: [ "main" ]
   push:
     branches: [ "main" ]
-  workflow_run:
   
+
 env:
-    IMAGE_NAME: panther
+    IMAGE_NAME: sodorpc
     IMAGE_TAGS: v1 ${{ github.sha }}
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
     REGISTRY_USER: ${{ github.actor }}
@@ -56,7 +56,7 @@ jobs:
         uses: contensis/block-push@v1
         with:
           alias: staffscc
-          block-id: name-of-block
+          block-id: santa-is-coming-to-town
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_TOKEN }}
           image-uri: ${{ env.IMAGE_NAME }}
