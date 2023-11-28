@@ -23,22 +23,22 @@ jobs:
       matrix:
         install_latest: [ true, false ]
 
-    steps:    
-      # Checkout push-to-registry action github repository
-      - name: Checkout Push to Registry action
-        uses: actions/checkout@v4
-      - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
-      - name: Log in to registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+  steps:    
+   # Checkout push-to-registry action github repository
+    - name: Checkout Push to Registry action
+      uses: actions/checkout@v4
+    - name: Build image
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+    - name: Log in to registry
+       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
       
 
       # Push the image to GHCR (Image Registry)
-      - name: Push To GHCR
-        uses: ./
-        id: push
-        with:
-          image: ${{ env.IMAGE_NAME }}
+    - name: Push To GHCR
+      uses: ./
+      id: push
+       with:
+          image: ${{ env.IMAGE_NAME }} 
           tags: ${{ env.IMAGE_TAGS }}
           registry: ${{ env.IMAGE_REGISTRY }}
           username: ${{ env.REGISTRY_USER }}
@@ -46,9 +46,9 @@ jobs:
           extra-args: |
             --disable-content-trust
 
-      - name: Echo outputs
-        run: |
-          echo "${{ toJSON(steps.push.outputs) }}"
+    - name: Echo outputs
+      run: |
+       echo "${{ toJSON(steps.push.outputs) }}"
 
   push_to_contensis:
     runs-on: ubuntu-latest
