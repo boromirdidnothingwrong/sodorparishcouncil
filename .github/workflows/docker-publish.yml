@@ -79,7 +79,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
+          echo: ${{ steps.meta.outputs.tags }}
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
       # repository is public to avoid leaking data.  If you would like to publish
@@ -106,6 +106,6 @@ jobs:
           block-id: sodor-pc-block-new
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_PERSONAL }}
-          image-uri: ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAGS }}
+          image-uri: ghcr.io/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
           project-id: sodorparishcouncil
           shared-secret: ${{ secrets.Z_SHARED_SECRET }}
