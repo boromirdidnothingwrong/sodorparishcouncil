@@ -16,10 +16,8 @@ on:
     branches: [ "main" ]
 
 env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_TAGS: build-${{ github.run_number }}
+  IMAGE_NAME: ghcr.io/${{ github.repository }}/${{ github.ref_name }}/app
 
 
 jobs:
@@ -108,6 +106,6 @@ jobs:
           block-id: sodor-pc-block-new
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_PERSONAL }}
-          image-uri: ghcr.io/boromirdidnothingwrong/sodorparishcouncil:build7
+          image-uri: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAGS }}
           project-id: sodorparishcouncil
           shared-secret: ${{ secrets.Z_SHARED_SECRET }}
