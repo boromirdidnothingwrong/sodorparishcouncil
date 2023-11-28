@@ -18,7 +18,7 @@ on:
 env:
   IMAGE_TAGS: build-${{ github.run_number }}
   IMAGE_NAME: ${{ github.repository }}/${{ github.ref_name }}/app
-  REGISTRY: ghcr.io/
+  REGISTRY: ghcr.io
 
 jobs:
   build:
