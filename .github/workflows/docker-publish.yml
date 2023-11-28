@@ -96,3 +96,18 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
+
+  push_to_contensis:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Contensis block push action
+        uses: contensis/block-push@v1
+        with:
+          alias: staffscc
+          block-id: sodor-pc-block-new
+          client-id: ${{ secrets.Z_CLIENT_ID }}
+          git-token: ${{ secrets.GIT_TOKEN }}
+          image-uri: ${{ env.IMAGE_NAME }}
+          project-id: sodorparishcouncil
+          shared-secret: ${{ secrets.Z_SHARED_SECRET }}
