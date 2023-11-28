@@ -11,7 +11,7 @@ on:
       - main
 env:
   IMAGE_TAGS: build-${{ github.run_number }}
-  IMAGE_NAME: ghcr.io/${{ github.repository }}/${{ github.ref_name }}/app 
+  IMAGE_NAME: ${{ github.repository }}/${{ github.ref_name }}/app 
 jobs:
   build:
     runs-on: ubuntu-latest
