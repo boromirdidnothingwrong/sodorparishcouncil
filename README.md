@@ -12,3 +12,5 @@ Hope this makes sense as an intro. My advice is go get "Insomnia API" or whateve
 Then look at the JSON to format it when you load it into the page.
 
 In terms of loading multiple sets of JSON, requesting and passing to page, still working on that.
+
+Forcing a rerun of the actions.
