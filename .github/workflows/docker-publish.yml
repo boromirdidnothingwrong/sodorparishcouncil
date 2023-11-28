@@ -107,7 +107,7 @@ jobs:
           alias: staffscc
           block-id: sodor-pc-block-new
           client-id: ${{ secrets.Z_CLIENT_ID }}
-          git-token: ${{ secrets.GIT_TOKEN }}
-          image-uri: ghcr.io/boromirdidnothingwrong/sodorparishcouncil:latest
+          git-token: ${{ secrets.GIT_PERSONAL }}
+          image-uri: ghcr.io/boromirdidnothingwrong/sodorparishcouncil:${{ steps.meta.outputs.tags }}
           project-id: sodorparishcouncil
           shared-secret: ${{ secrets.Z_SHARED_SECRET }}
