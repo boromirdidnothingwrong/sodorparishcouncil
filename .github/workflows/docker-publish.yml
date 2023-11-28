@@ -50,7 +50,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.IMAGE_TAGS }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -69,7 +69,7 @@ jobs:
         uses: contensis/block-push@v1
         with:
           alias: staffscc
-          block-id: sodor-pc-block-new
+          block-id: sodor-pc-block-new2
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_PERSONAL }}
           image-uri: ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAGS }}
