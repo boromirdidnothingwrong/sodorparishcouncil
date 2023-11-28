@@ -61,17 +61,17 @@ jobs:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
 
-  push_to_contensis:
-    runs-on: ubuntu-latest
-    needs: build   
-    steps:
-      - name: Contensis block push action
-        uses: contensis/block-push@v1
-        with:
-          alias: staffscc
-          block-id: sodor-pc-block-new2
-          client-id: ${{ secrets.Z_CLIENT_ID }}
-          git-token: ${{ secrets.GIT_PERSONAL }}
-          image-uri: ghcr.io/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
-          project-id: sodorparishcouncil
-          shared-secret: ${{ secrets.Z_SHARED_SECRET }}
+    push_to_contensis:
+      runs-on: ubuntu-latest
+      needs: build   
+      steps:
+        - name: Contensis block push action
+          uses: contensis/block-push@v1
+          with:
+            alias: staffscc
+            block-id: sodor-pc-block-new2
+            client-id: ${{ secrets.Z_CLIENT_ID }}
+            git-token: ${{ secrets.GIT_PERSONAL }}
+            image-uri: ghcr.io/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
+            project-id: sodorparishcouncil
+            shared-secret: ${{ secrets.Z_SHARED_SECRET }}
