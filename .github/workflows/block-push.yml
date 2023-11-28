@@ -23,11 +23,16 @@ jobs:
       matrix:
         install_latest: [ true, false ]
         
-   # Checkout push-to-registry action github repository
+  job2: # Checkout push-to-registry action github repository
+    needs: [build]
     name: Checkout Push to Registry action
     uses: actions/checkout@v4
+  job3:
+    needs: [build, job2]
     name: Build image
     run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+  job4:
+    needs: [build, job2, job3]
     name: Log in to registry
     run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
       
