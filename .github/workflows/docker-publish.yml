@@ -72,6 +72,6 @@ jobs:
           block-id: sodor-pc-block-new
           client-id: ${{ secrets.Z_CLIENT_ID }}
           git-token: ${{ secrets.GIT_PERSONAL }}
-          image-uri: ghcr.io/${{ env.IMAGE_NAME }}:${{ needs.build.meta.outputs.tags }}
+          image-uri: ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAGS }}
           project-id: sodorparishcouncil
           shared-secret: ${{ secrets.Z_SHARED_SECRET }}
