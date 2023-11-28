@@ -30,14 +30,14 @@ jobs:
     - name: Build image
       run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
     - name: Log in to registry
-       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
       
 
       # Push the image to GHCR (Image Registry)
     - name: Push To GHCR
       uses: ./
       id: push
-       with:
+      with:
           image: ${{ env.IMAGE_NAME }} 
           tags: ${{ env.IMAGE_TAGS }}
           registry: ${{ env.IMAGE_REGISTRY }}
