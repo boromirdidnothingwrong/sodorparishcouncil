@@ -27,8 +27,9 @@
     "vite": "^4.4.2"
   },
   "dependencies": {
-    "type": "module",
     "contensis-delivery-api": "^1.3.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.8",
+    "type": "module"
   }
 }
