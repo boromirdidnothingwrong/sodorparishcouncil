@@ -1,5 +1,5 @@
 <script type="ts">
-	/** @type {import('./$types').PageServerData} */
+	/** @type {import('./$types').LayoutServerData} */
 	export let data;
 	let stuff = "";
 	stuff = JSON.stringify(data);
