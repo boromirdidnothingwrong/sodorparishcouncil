@@ -4,5 +4,5 @@ WORKDIR /
 EXPOSE 3001
 # simple docker file for now
 run npm ci
-run npm run build --prod
-CMD ["node"]
+run npm run build
+CMD ["node","build/index.js"]
